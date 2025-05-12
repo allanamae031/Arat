@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arat pre gala tayo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Global Reset & Font Setup */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Hide scrollbar in WebKit browsers */
+    ::-webkit-scrollbar {
+    display: none;
+    }
+    
+    body {
+      font-family: 'Playfair Display', serif;
+      background-color: #f9fafa;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    /* Header */
+    header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 10px 40px; /* Adjusted padding */
+      display: flex;
+      align-items: center;  /* Center vertically */
+      z-index: 10;
+      background: rgba(0, 0, 0, 0.4);
+    }
+  
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      color: #fff;
+      margin: 0;  /* Remove default margin */
+    }
+  
+    nav {
+      position: absolute;  /* Position the navigation items */
+      right: 40px;  /* Right-aligned navigation links */
+      display: flex;
+      align-items: center;
+    }
+  
+    nav a {
+      margin-left: 20px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+  
+    nav a:hover {
+      color: #00b4b6;
+    }
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      transition: background-image 1s ease-in-out;
+    }
+    
+    .hero-overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 40px;
+      border-radius: 12px;
+      text-align: center;
+      max-width: 500px;
+      color: #fff;
+    }
+    
+    .hero h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    
+    .hero input[type="text"] {
+      padding: 10px;
+      width: 250px;
+      border: none;
+      border-radius: 5px;
+      margin-right: 10px;
+      font-size: 16px;
+    }
+    
+    .hero button {
+      padding: 10px 20px;
+      background-color: #009688;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    .hero button:hover {
+      background-color: #00796b;
+    }
+
+    a{
+        color: #8adfe1;
+    }
+
+    </style>
+</head>
+<body>
+  <section class="hero">
+    <header>
+      <h1>Arat</h1>
+      <nav>
+        <a href="index.php">Home</a>
+        <a href="destinations.php">Destinations</a>
+        <a href="contact.html">Contact</a>
+        <a href="backend/auth/login.php">Login</a>
+      </nav>
+    </header>
+    <div class="hero-overlay">
+        <h2>Want to book a tour?</h2>
+        <p>Login to your account now. <a href="backend/auth/login.php">Click Here.</a><br> Dont Have an account? <a href="backend/auth/register.php">Register here.</a></p>
+    </div>
+  </section>
+
+<script>
+     const heroSection = document.querySelector('.hero');
+
+const images = [
+'image/bora1.jpg',
+'image/Kawasan Falls.jpg'
+];
+
+let current = 0;
+
+function changeBackground() {
+heroSection.style.backgroundImage = `url('${images[current]}')`;
+current = (current + 1) % images.length;
+}
+
+changeBackground(); 
+setInterval(changeBackground, 4000); 
+</script>
+</body>
+</html>
